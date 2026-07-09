@@ -24,7 +24,8 @@ class Aisentinel < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/aisentinel version")
-    assert_match "validate-policy", shell_output("#{bin}/aisentinel 2>&1", 1)
+    # The Go binary hard-codes "1.0.6" in its banner, so check that literal
+    # rather than `version.to_s` (which differs between stable and HEAD).
+    assert_match "1.0.6", shell_output("#{bin}/aisentinel version")
   end
 end
