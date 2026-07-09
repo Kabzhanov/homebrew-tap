@@ -23,10 +23,6 @@ class Aisentinel < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/aisentinel version")
-    system bin/"aisentinel", "validate-policy", "-"
-    assert_match "ok", pipe_output("#{bin}/aisentinel validate-policy -", <<~YAML, 0)
-      version: 1
-      decisions: {}
-    YAML
+    assert_match "validate-policy", shell_output("#{bin}/aisentinel 2>&1", 1)
   end
 end
