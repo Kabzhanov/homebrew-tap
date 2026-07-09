@@ -4,7 +4,7 @@ class Aisentinel < Formula
   url "https://github.com/Kabzhanov/AISentinel/archive/refs/tags/v1.0.6.tar.gz"
   sha256 "bf9b2b13e53bb5340f8e3a55435a1337d5479624f75ef0bc551d20905bf9bb4c"
   license "Apache-2.0"
-  head "https://github.com/Kabzhanov/AISentinel.git", branch: "master"
+  head "https://github.com/Kabzhanov/AISentinel.git", branch: "main"
 
   livecheck do
     url :stable
