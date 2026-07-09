@@ -1,5 +1,5 @@
 class Aisentinel < Formula
-  desc "AI governance CLI and MCP server: ATI collector, policy validator, audit log tailer"
+  desc "AI governance CLI and MCP server (ATI collector, policy validator)"
   homepage "https://github.com/Kabzhanov/AISentinel"
   url "https://github.com/Kabzhanov/AISentinel/archive/refs/tags/v1.0.6.tar.gz"
   sha256 "bf9b2b13e53bb5340f8e3a55435a1337d5479624f75ef0bc551d20905bf9bb4c"
@@ -14,9 +14,11 @@ class Aisentinel < Formula
   depends_on "go" => :build
 
   def install
+    # brew's Version class is not a Ruby String, so build a custom flag set.
+    ver = build.head? ? "HEAD" : version.to_s
     ldflags = %W[
       -s -w
-      -X main.version=#{version.is_a?(String) ? version : "HEAD"}
+      -X main.version=#{ver}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/aisentinel"
   end
