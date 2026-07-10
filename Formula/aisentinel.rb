@@ -1,8 +1,8 @@
 class Aisentinel < Formula
   desc "AI governance CLI and MCP server (ATI collector, policy validator)"
   homepage "https://github.com/Kabzhanov/AISentinel"
-  url "https://github.com/Kabzhanov/AISentinel/archive/refs/tags/v1.0.6.tar.gz"
-  sha256 "bf9b2b13e53bb5340f8e3a55435a1337d5479624f75ef0bc551d20905bf9bb4c"
+  url "https://github.com/Kabzhanov/AISentinel/archive/refs/tags/v1.0.7.tar.gz"
+  sha256 "75213fe4149282773be83faf262fdabf82bb0d8cca289c54846e70ea379fe1b7"
   license "Apache-2.0"
   head "https://github.com/Kabzhanov/AISentinel.git", branch: "main"
 
