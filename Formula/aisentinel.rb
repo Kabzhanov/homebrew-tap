@@ -24,8 +24,8 @@ class Aisentinel < Formula
   end
 
   test do
-    # The Go binary hard-codes "1.0.6" in its banner, so check that literal
-    # rather than `version.to_s` (which differs between stable and HEAD).
-    assert_match "1.0.6", shell_output("#{bin}/aisentinel version")
+    # Upstream builds with `-ldflags "-X main.version=..."` (added in v1.0.7),
+    # so for stable this matches the formula's version literal.
+    assert_match version.to_s, shell_output("#{bin}/aisentinel version")
   end
 end
